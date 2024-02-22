@@ -10,7 +10,7 @@ public class AppProperties {
 	
 	private final Auth auth = new Auth();
     private final OAuth2 oauth2 = new OAuth2();
-    private final String hostname = "";
+    private String hostname;
 
     public static class Auth {
         private String tokenSecret;
@@ -48,6 +48,10 @@ public class AppProperties {
 
     public String getHostname() {
         return hostname;
+    }
+
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
     }
 
     public Auth getAuth() {
