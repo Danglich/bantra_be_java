@@ -1,0 +1,93 @@
+spring:
+  main: 
+    banner-mode: off
+    allow-circular-references: true
+  datasource:
+    url: jdbc:mysql://bantra.cdowc8uwkgwa.ap-southeast-2.rds.amazonaws.com:3306/ban_tra?maxAllowedPacket=200000000
+    username: admin
+    password: danglich01
+  servlet: 
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  jpa:
+    show-sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 642893742959-sbiv4ct6ck3iusf9u5hl741d7nelmp57.apps.googleusercontent.com
+            clientSecret: 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
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - email
+              - profile
+
+pagination:
+  size: 8
+logging:
+  level:
+    root: warn
+    org:
+      hibernate:
+        SQL: debug
+        orm:
+          jdbc:
+            bind: trace
+app:
+  auth:
+    tokenSecret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+    tokenExpirationMsec: 8640000000
+  cors:
+    allowedOrigins: http://localhost:3000,http://localhost:8080
+  oauth2:
+    # After successfully authenticating with the OAuth2 Provider,
+    # we'll be generating an auth token for the user and sending the token to the
+    # redirectUri mentioned by the client in the /oauth2/authorize request.
+    # We're not using cookies because they won't work well in mobile clients.
+    authorizedRedirectUris:
+      - http://localhost:3000/oauth2/redirect
+      - myandroidapp://oauth2/redirect
+      - myiosapp://oauth2/redirect
+
+
+#spring.datasource.url=jdbc:mysql://localhost:3306/ban_tra?maxAllowedPacket=200000000
+#spring.datasource.username=root
+#spring.datasource.password=
+#
+## security
+#spring.security.user.name=user
+#spring.security.user.password=password
+#spring.security.jwt.secret=404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+#spring.security.jwt.expiration=8640000000
+#
+## 
+#spring.main.allow-circular-references=true
+#
+## turn off the banner
+#spring.main.banner-mode=off
+#
+#
+## logging level
+#logging.level.root=warn
+#
+## add logging configs to display SQL statements
+##spring.jpa.show-sql=true
+##spring.jpa.properties.hibernate.format_sql=true
+#
+#
+#logging.level.org.hibernate.SQL=debug
+#logging.level.org.hibernate.orm.jdbc.bind=trace
+#
+##Configure JPA/Hibernate to auto create database tables
+##spring.jpa.hibernate.ddl-auto=create 
+#
+#
+## Pagination
+#pagination.size=8
+#
+## upload size 
+#spring.servlet.multipart.max-file-size=10MB
+#spring.servlet.multipart.max-request-size=10MB
+
