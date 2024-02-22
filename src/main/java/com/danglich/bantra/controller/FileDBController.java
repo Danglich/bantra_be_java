@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.danglich.bantra.config.AppProperties;
 import com.danglich.bantra.model.FileDB;
 import com.danglich.bantra.service.FileDBService;
 
@@ -26,13 +27,14 @@ public class FileDBController {
 	
 	
 	private final FileDBService fileDBService;
+	private final AppProperties appProperties;
 	
 	@PostMapping("/admin/files/upload")
 	public ResponseEntity<String> upload(@RequestBody MultipartFile image) throws IOException {
 		
 		FileDB file =  fileDBService.upload(image);
 		
-		return ResponseEntity.ok("http://localhost:8080/api/files/" + file.getId());
+		return ResponseEntity.ok(appProperties.getHostname() + "/api/files/" + file.getId());
 	}
 	
 	@GetMapping("/files/{id}")

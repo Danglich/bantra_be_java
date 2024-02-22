@@ -10,6 +10,7 @@ public class AppProperties {
 	
 	private final Auth auth = new Auth();
     private final OAuth2 oauth2 = new OAuth2();
+    private final String hostname = "";
 
     public static class Auth {
         private String tokenSecret;
@@ -43,6 +44,10 @@ public class AppProperties {
             this.authorizedRedirectUris = authorizedRedirectUris;
             return this;
         }
+    }
+
+    public String getHostname() {
+        return hostname;
     }
 
     public Auth getAuth() {

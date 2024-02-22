@@ -55,7 +55,7 @@ public class ProductMedia {
 	
 	@PostPersist
 	protected void postPersist() {
-		this.url = "http://localhost:8080/api/product_medias" + "/" + this.id;
+		this.url = "https://danglich-bantra.onrender.com/api/product_medias" + "/" + this.id;
 	}
 
 }

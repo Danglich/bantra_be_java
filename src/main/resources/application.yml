@@ -36,11 +36,12 @@ logging:
           jdbc:
             bind: trace
 app:
+  hostname: https://danglich-bantra.onrender.com
   auth:
     tokenSecret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
     tokenExpirationMsec: 8640000000
   cors:
-    allowedOrigins: http://localhost:3000,http://localhost:8080
+    allowedOrigins: http://localhost:3000,http://localhost:8080,https://danglich-bantra.onrender.com 
   oauth2:
     # After successfully authenticating with the OAuth2 Provider,
     # we'll be generating an auth token for the user and sending the token to the
