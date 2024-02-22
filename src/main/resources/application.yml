@@ -41,7 +41,7 @@ app:
     tokenSecret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
     tokenExpirationMsec: 8640000000
   cors:
-    allowedOrigins: http://localhost:3000,http://localhost:8080,https://danglich-bantra.onrender.com 
+    allowedOrigins: http://localhost:3000,http://localhost:8080,https://danglich-bantra.onrender.com,https://danglich-bantra.netlify.app
   oauth2:
     # After successfully authenticating with the OAuth2 Provider,
     # we'll be generating an auth token for the user and sending the token to the
@@ -49,6 +49,7 @@ app:
     # We're not using cookies because they won't work well in mobile clients.
     authorizedRedirectUris:
       - http://localhost:3000/oauth2/redirect
+      - https://danglich-bantra.netlify.app/oauth2/redirect
       - myandroidapp://oauth2/redirect
       - myiosapp://oauth2/redirect
 
