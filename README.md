@@ -30,6 +30,7 @@ Dưới đây là các API mà ứng dụng cung cấp:
 - `PUT /api/admin/products`: Cập nhật thông tin của một sản phẩm.
 - `DELETE /api/admin/products/{id}`: Xóa một sản phẩm.
 - `DELETE /api/admin/product_categories/{category_id}/products`: Xóa sản phẩm theo loại sản phẩm.
+
 ### Đơn hàng
 
 - `GET /api/orders`: Lấy danh sách đơn hàng.
@@ -46,6 +47,9 @@ Dưới đây là các API mà ứng dụng cung cấp:
 
 ### Người dùng
 
+- `POST /api/auth/register`: Đăng ký tài khoản.
+- `POST /api/auth/login`: Đăng nhập tài khoản.
+- `POST /api/auth/admin/login`: Đăng nhập tài khoản quản trị viên.
 - `GET /api/users`: Lấy danh sách khách hàng.
 - `GET /api/users/{id}`: Lấy thông tin chi tiết về một khách hàng cụ thể.
 - `POST /api/users`: Tạo một khách hàng mới.
@@ -53,6 +57,39 @@ Dưới đây là các API mà ứng dụng cung cấp:
 - `PUT /api/users/update/password`: Cập nhật mật khẩu của một khách hàng.
 - `PUT /api/admin/users/disable/{user_id}`: Cho phép người quản trị ngưng hoạt động một khách hàng.
 - `DELETE /api/admin/users/{id}`: Cho phép người quản trị xóa một khách hàng.
+
+### Tin tức
+
+- `GET /api/news`: Lấy danh sách bài tin tức.
+- `GET /api/news/{id}`: Lấy thông tin chi tiết về một bài tin cụ thể.
+- `GET /api/news/top`: Lấy danh sách bài tin nhiều lượt xem nhất.
+- `GET /api/news_categories/news/{category_id}`: Lấy danh sách các bài tin theo loại.
+- `GET /api/products/best_selling`: Lấy danh sách sản phẩm bán chạy .
+- `POST /api/admin/news/{category_id}`: tạo một bài tin mới.
+- `PUT /api/admin/news`: Cập nhật một bài tin mới.
+- `PUT /api/news/update/views/{news_id}`: Cập nhật lượt xem của bài tin.
+- `DELETE /api/admin/news/{id}`: Xóa một bài .
+
+### Đánh giá
+
+- `GET /api/reviews`: Lấy danh sách bài đánh giá.
+- `GET /api/reviews/top`: Lấy top  đánh giá mới .
+- `POST /api/products/{product_id}/reviews`: Tạo đánh giá mới.
+- `PUT /api/reviews`: Cập nhật một bài đánh giá.
+- `DELETE /api/reviews/{id}`: Xóa một bài đánh giá .
+
+### Bình luận bài viết
+
+- `GET /api/news_comments/{news_id}/top_level`: Lấy danh sách bình luận gốc của bài viết.
+- `GET /api/news_comments/{parent_id}/child`: Lấy danh sách bình luận con của bình luận gốc .
+- `POST /api/news_comments`: Tạo bình luận mới.
+- `DELETE /api/news_comments/{id}`: Xóa một bình luận .
+
+### Địa chỉ
+
+- `POST /api/users/addresses`: Người dùng tạo địa chỉ .
+- `PUT /api/addresses/set_default/{id}`: Đặt địa chỉ làm mặc định.
+- `GET /api/users/{user_id}/addresses`: Lấy danh sách địa chỉ người  .
 
 ## Đóng góp
 
