@@ -5,7 +5,7 @@
 ## Cài đặt
 
 1. Clone repository này về máy của bạn:
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/Danglich/bantra_be_java.git
 2. Import dự án vào IDE của bạn (ví dụ: IntelliJ, Eclipse).
 
 3. Cấu hình cơ sở dữ liệu:
@@ -66,4 +66,4 @@ Nếu bạn muốn đóng góp vào dự án này, bạn có thể làm theo cá
 
 ## Tác giả
 
-- Tên: [Your Name](https://github.com/your-username)
+- Tên: [Dang Lich](https://github.com/Danglich)
